@@ -1,0 +1,85 @@
+DATA 606_First_Assignment
+
+Md_Jalal_Uddin
+
+August 30, 2016
+
+Problem Set 1:
+
+1. Calculate the dot product u.v where u = [0.5, 0.5] and v = [3, -4]
+
+```{r}
+
+ u <- c(0.5,0.5)
+ v <- c(3,-4)
+ dot_product_uv<- u%*%v
+ print (dot_product_uv)
+    
+```
+
+2. What are the lengths of u and v? Please note that the mathematical notion of the length of a vector is not the same as a computer science definition.
+
+```{r}
+len_u <- sqrt(sum(u*u))
+ print(len_u)
+
+len_v <- sqrt(sum(v*v))
+ print (len_v)
+
+```
+
+ 3. What is the linear combination: 3u - 2v? 
+ 
+```{r}
+lin_com <- (3*u)-(2*v)
+ print (lin_com)
+
+```
+
+4. What is the angle between u and v
+
+```{r}
+ theta <- acos( sum(u*v) / ( sqrt(sum(u * u)) * sqrt(sum(v * v)) ) )  
+ print(theta)
+ #the angle given in radius 
+#http://stackoverflow.com/questions/1897704/angle-between-two-vectors-in-r
+
+
+```
+
+Problem Set 2:
+
+
+
+Please test it with the system below and it should produce a solution x=[???1.55;???0.32;0.95]x=[???1.55;???0.32;0.95]
+?????????12???11???1???2354??????????????????x1x2x3?????????=?????????126?????????
+
+Solution:
+
+```{r}
+# writing matrix A 
+
+A <- array(c(1, 2, -1, 1, -1, -2, 3, 5, 4), dim=c(3,3))
+A # to see the matrix A
+```
+
+ 
+```{r}
+B <- c(1, 2, 6)
+B # to see given vector
+
+```
+
+
+```{r}
+# creating function to solve system of linear equation using back-substitution
+
+
+# the desire linear equation
+
+linear_equ(A,B)
+
+#Source: 
+# http://stackoverflow.com/questions/8145694/solving-simultaneous-equations-with-r
+#http://www.tutor-homework.com/Math_Help/college_algebra/m5l4notes.pdf
+```
